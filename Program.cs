@@ -18,6 +18,7 @@ namespace AtriplexServer
         public static void Main(string[] args)
         {
             HttpListener listener = new HttpListener();
+            ///Assign your own local IP here.
             listener.Prefixes.Add("http://192.168.1.200:80/");
             listener.Start();
             IntPtr hWnd = GetConsoleWindow();
@@ -77,11 +78,6 @@ namespace AtriplexServer
                             filename.WriteOther(ref buffer);  
                             break;
                         }
-                    }
-
-                    if (filename.ToLower().Contains("provjera"))
-                    {
-                        File.WriteAllBytes($"Scraped/Mozd_Ispiti/{filename}", buffer);
                     }
                     Console.WriteLine($"Wrote file: {listenerContext.Request.RawUrl}.");
                     listenerContext.Response.StatusCode = 200;
