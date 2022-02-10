@@ -18,7 +18,7 @@ namespace AtriplexServer
         public static void Main(string[] args)
         {
             HttpListener listener = new HttpListener();
-            ///Assign your own local IP here.
+            //Assign your own local IP here.
             listener.Prefixes.Add("http://192.168.1.200:80/");
             listener.Start();
             IntPtr hWnd = GetConsoleWindow();
